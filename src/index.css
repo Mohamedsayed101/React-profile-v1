@@ -1,0 +1,35 @@
+/* App.css */
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.header-line::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    bottom: -20px;
+    left: 0;
+    height: 5px;
+    background-color: #1976d2;
+    border-radius: 90px;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    -ms-border-radius: 90px;
+    -o-border-radius: 90px;
+}
+
+.animate-updown {
+  animation: updown 3s ease-in-out infinite;
+}
+
+@keyframes updown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
