@@ -72,6 +72,6 @@ git clone https://github.com/Mohamedsayed101/React-profile-v1.git
 ## 🚀 Demo
 
 - **GitHub Pages:** [https://Mohamedsayed101.github.io/React-profile-v1](https://Mohamedsayed101.github.io/React-profile-v1)
-- **Vercel:**(https://react-profile-v1-s8l1.vercel.app/about)
+- **Vercel:** [https://react-profile-v1-s8l1.vercel.app/about]
 
 ---
