@@ -54,7 +54,7 @@ export default function About() {
         <HeadingPage title="About Me" />
         <div className="content flex gap-13">
           <img
-            data-aos="fade-right"
+            data-aos="zoom-in"
             src="/Images/Me-1.jpg"
             alt="Profile Image"
             className="w-65 h-85 rounded-xl border-1 border-blue-100 p-1 shadow-lg animate-updown"

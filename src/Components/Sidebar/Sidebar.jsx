@@ -38,7 +38,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 right-0 h-full
+          fixed top-0 right-0 max-h-screen h-screen 
           flex flex-col
           border-l border-gray-700
           transform transition-transform duration-300

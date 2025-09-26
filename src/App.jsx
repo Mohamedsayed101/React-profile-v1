@@ -31,7 +31,7 @@ function App() {
     <Routes>
       {/* Parent Layout */}
       <Route element={<MainLayout />}>
-        <Route index element={<Navigate />} />
+        <Route index element={<Navigate to="/about" replace />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />

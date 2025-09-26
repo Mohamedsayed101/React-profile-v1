@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import HeadingPage from "../../Components/HeadingPage/HeadingPage";
 
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+
 export default function Contact() {
   const {
     register,
@@ -18,31 +21,60 @@ export default function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-2.5 w-1/3 mx-auto"
         >
-          <input
+          <TextField
+            id="outlined-basic"
+            label="Name"
+            variant="outlined"
             {...register("name", { required: true })}
             placeholder="Enter Your Name"
             className="p-2.5"
           />
-          {errors.name && <span>Name is required</span>}
+          {errors.name && (
+            <span className="text-red-500">Name is required</span>
+          )}
 
-          <input
+          <TextField
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
             type="email"
             {...register("email", { required: true })}
             placeholder="Enter Your Email"
             className="p-2.5"
           />
-          {errors.email && <span>Email is required</span>}
+          {errors.email && (
+            <span className="text-red-500">Email is required</span>
+          )}
 
-          <input
+          <TextField
+            id="outlined-basic"
+            label="Subject"
+            variant="outlined"
             type="text"
             {...register("subject", { required: true })}
             placeholder="Subject"
             className="p-2.5"
           />
-          <textarea name="message" id="message" placeholder="Message" className="p-2.5"/>
-          {errors.email && <span>Email is required</span>}
+          {errors.subject && (
+            <span className="text-red-500">Subject is required</span>
+          )}
+          <TextField
+            label="Message"
+            multiline
+            rows={4}
+            name="message"
+            id="message"
+            placeholder="Message"
+            className="p-2.5"
+          />
+          {errors.message && (
+            <span className="text-red-500">Email is required</span>
+          )}
 
-          <button type="submit">Submit</button>
+          <Button type="submit" variant="outlined" className=" m-auto">
+            Submit
+          </Button>
+          
         </form>
       </div>
     </>
