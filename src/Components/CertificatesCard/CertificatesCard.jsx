@@ -9,6 +9,7 @@ export default function CertificatesCard({ data }) {
   return (
     <Card
       sx={{
+
         minWidth: 300,
         display: "flex",
         flexDirection: "column",

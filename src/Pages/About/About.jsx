@@ -1,15 +1,11 @@
-// For title Animations
 import { Typewriter } from "react-simple-typewriter";
-
-// Icon Library
 import {
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaFilePdf,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
-
 import { FiFacebook, FiGithub, FiLinkedin } from "react-icons/fi";
 
 import Button from "@mui/material/Button";
@@ -45,7 +41,7 @@ export default function About() {
       id: 4,
       title: "Whatsapp",
       icon: <FaWhatsapp />,
-      color: "#b7c315ff",
+      color: "#25D366",
       link: "https://wa.me/201006291302",
     },
   ];
@@ -53,17 +49,17 @@ export default function About() {
   const contactInfo = [
     {
       id: 1,
-      icon: <FaEnvelope style={{ color: theme.palette.primary.dark }} />,
+      icon: <FaEnvelope style={{ color: theme.palette.primary.main }} />,
       text: "ms3655@fayoum.edu.eg",
     },
     {
       id: 2,
-      icon: <FaPhoneAlt style={{ color: theme.palette.primary.dark }} />,
+      icon: <FaPhoneAlt style={{ color: theme.palette.primary.main }} />,
       text: "+201006291302",
     },
     {
       id: 3,
-      icon: <FaMapMarkerAlt style={{ color: theme.palette.primary.dark }} />,
+      icon: <FaMapMarkerAlt style={{ color: theme.palette.primary.main }} />,
       text: "Fayoum - Egypt",
     },
   ];
@@ -79,15 +75,22 @@ export default function About() {
           data-aos="zoom-in"
           loading="lazy"
           src="/Images/Me-1.jpg"
-          alt="Profile Image"
-          className="w-65 max-w-xs sm:max-w-sm md:max-w-md h-auto rounded-xl border border-blue-100 p-1 shadow-lg animate-updown mx-auto lg:mx-0"
+          alt="Profile"
+          className="w-64 max-w-xs sm:max-w-sm md:max-w-md h-auto rounded-xl border p-1 shadow-lg animate-updown mx-auto lg:mx-0"
+          style={{
+            borderColor: theme.palette.divider,
+            backgroundColor: theme.palette.background.paper,
+          }}
         />
 
         {/* Info Section */}
         <div className="flex flex-col gap-6 lg:flex-1" data-aos="fade-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-blue-400 text-center lg:text-left">
+          <h2
+            className="text-2xl sm:text-3xl font-semibold text-center lg:text-left"
+            style={{ color: theme.palette.primary.main }}
+          >
             Mohamed Sayed |{" "}
-            <span style={{ color: `${theme.palette.primary.main}` }}>
+            <span>
               <Typewriter
                 words={[
                   "Front-End Developer",
@@ -105,7 +108,10 @@ export default function About() {
           </h2>
 
           {/* Bio */}
-          <div className="flex flex-col gap-4 text-gray-500 text-center lg:text-left">
+          <div
+            className="flex flex-col gap-4 text-center lg:text-left"
+            style={{ color: theme.palette.text.secondary }}
+          >
             <p>
               I’m a Computer and AI student with hands-on experience in frontend
               development using <strong>React</strong> and modern web
@@ -120,14 +126,18 @@ export default function About() {
             </p>
           </div>
 
-          <hr className="border-t" style={{ borderColor: theme.palette.primary.light }} />
+          <hr
+            className="border-t"
+            style={{ borderColor: theme.palette.primary.light }}
+          />
 
           {/* Contact Info */}
           <div className="flex flex-col gap-2 text-center lg:text-left">
             {contactInfo.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-center lg:justify-start gap-2 text-blue-200"
+                className="flex items-center justify-center lg:justify-start gap-2"
+                style={{ color: theme.palette.text.primary }}
               >
                 {item.icon}
                 <p>{item.text}</p>
@@ -143,6 +153,7 @@ export default function About() {
               href="/Mohamed_Sayed_Frontend.pdf"
               target="_blank"
               className="flex items-center justify-center gap-2"
+              sx={{ backgroundColor: theme.palette.primary.main }}
             >
               <FaFilePdf className="text-xl" />
               <p>Download CV</p>
@@ -167,16 +178,13 @@ export default function About() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full border border-gray-300 
-                    text-gray-600 transition transform hover:scale-110
-                    group-hover:text-current group-hover:border-current"
+                    className="p-3 rounded-full border transition transform hover:scale-110"
+                    style={{
+                      borderColor: theme.palette.divider,
+                      color: item.color,
+                    }}
                   >
-                    <span
-                      className="transition-colors duration-300"
-                      style={{ color: item.color }}
-                    >
-                      {item.icon}
-                    </span>
+                    {item.icon}
                   </a>
                 </div>
               ))}

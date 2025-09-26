@@ -1,13 +1,29 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Components/Sidebar/Sidebar";
+import DarkMode from "../Components/DarkMode/DarkMode";
+import Box from "@mui/material/Box";
 
 export default function MainLayout() {
   return (
-    <div className="flex xs:flex-row-reverse ">
+    <Box
+      sx={{
+        display: "flex",
+        bgcolor: "background.default",
+        color: "text.primary",
+        minHeight: "100vh",
+      }}
+    >
       <Sidebar />
-      <main className="flex-grow  p-6 min-h-screen" data-aos="fade-left">
+      <Box
+        component="main"
+        className="flex-grow p-6 relative"
+        sx={{ bgcolor: "background.default", color: "text.primary" }}
+      >
         <Outlet />
-      </main>
-    </div>
+        <div className="absolute right-10 bottom-10 border-blue-400 border-1 border-solid flex justify-end items-center  rounded-full w-11 h-11">
+          <DarkMode />
+        </div>
+      </Box>
+    </Box>
   );
 }
