@@ -23,13 +23,12 @@ const links = [
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
-
   return (
     <>
       {/* Toggle Button */}
       <button
         style={{ backgroundColor: theme.palette.primary.dark }}
-        className="sm:hidden fixed top-4 right-4 z-50 p-2 text-white rounded-md"
+        className="sm:hidden fixed top-4 right-4 z-150 p-2 text-white rounded-md"
         onClick={() => setOpen(!open)}
       >
         {open ? <FaTimes /> : <FaBars />}
@@ -38,6 +37,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       <aside
         className={`
+          pos
           fixed top-0 right-0 max-h-screen h-screen 
           flex flex-col
           border-l border-gray-700

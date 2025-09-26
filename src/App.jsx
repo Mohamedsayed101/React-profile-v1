@@ -12,7 +12,7 @@ import Education from "./Pages/Education/Education";
 import Projects from "./Pages/Projects/Projects";
 import NotFound from "./Pages/NotFound/NotFound";
 
-// AOS 
+// AOS
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,10 +23,11 @@ import "./index.css";
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
+      duration: 1000,
+      once: true,
     });
   }, []);
+
   return (
     <Routes>
       {/* Parent Layout */}

@@ -33,3 +33,9 @@
     transform: translateY(-15px);
   }
 }
+
+
+.pos {
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}

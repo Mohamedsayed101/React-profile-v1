@@ -12,71 +12,73 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => console.log(data);
-  return (
-    <>
-      <div className="px-3 flex flex-col gap-19">
-        <HeadingPage title="Contact Me" />
 
+  return (
+    <div className="px-3 flex flex-col gap-19">
+      <HeadingPage title="Contact Me" />
+
+      <div data-aos="fade-left" className="w-full">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-2.5 w-1/3 mx-auto"
+          className="flex flex-col gap-4 sm:w-2/3 lg:w-1/3 mx-auto"
         >
+          {/* Name */}
           <TextField
-            id="outlined-basic"
             label="Name"
             variant="outlined"
             {...register("name", { required: true })}
             placeholder="Enter Your Name"
-            className="p-2.5"
           />
           {errors.name && (
-            <span className="text-red-500">Name is required</span>
+            <span className="text-red-500 text-sm">Name is required</span>
           )}
 
+          {/* Email */}
           <TextField
-            id="outlined-basic"
             label="Email"
             variant="outlined"
             type="email"
             {...register("email", { required: true })}
             placeholder="Enter Your Email"
-            className="p-2.5"
           />
           {errors.email && (
-            <span className="text-red-500">Email is required</span>
+            <span className="text-red-500 text-sm">Email is required</span>
           )}
 
+          {/* Subject */}
           <TextField
-            id="outlined-basic"
             label="Subject"
             variant="outlined"
             type="text"
             {...register("subject", { required: true })}
             placeholder="Subject"
-            className="p-2.5"
           />
           {errors.subject && (
-            <span className="text-red-500">Subject is required</span>
+            <span className="text-red-500 text-sm">Subject is required</span>
           )}
+
+          {/* Message */}
           <TextField
             label="Message"
             multiline
             rows={4}
-            name="message"
-            id="message"
+            {...register("message", { required: true })}
             placeholder="Message"
-            className="p-2.5"
           />
           {errors.message && (
-            <span className="text-red-500">Email is required</span>
+            <span className="text-red-500 text-sm">Message is required</span>
           )}
 
-          <Button type="submit" variant="outlined" className=" m-auto">
+          {/* Submit */}
+          <Button
+            type="submit"
+            variant="contained"
+            className="self-center mt-2"
+          >
             Submit
           </Button>
-          
         </form>
       </div>
-    </>
+    </div>
   );
 }

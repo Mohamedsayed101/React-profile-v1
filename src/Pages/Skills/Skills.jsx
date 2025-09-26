@@ -14,7 +14,7 @@ export default function Skills() {
     <>
       <div className="px-3 flex flex-col gap-19">
         <HeadingPage title="Skills" />
-        <div className="flex gap-6" data-aos="fade-up-left">
+        <div className="flex gap-6 flex-wrap justify-center" data-aos="fade-up-left">
           <SkillsCard
             title="Programming Languages"
             data={langs}
