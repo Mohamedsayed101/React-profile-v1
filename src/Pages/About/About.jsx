@@ -7,9 +7,10 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaFilePdf,
+  FaWhatsapp
 } from "react-icons/fa";
 
-import { FiFacebook, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiFacebook, FiGithub, FiLinkedin } from "react-icons/fi";
 
 import Button from "@mui/material/Button";
 import HeadingPage from "../../Components/HeadingPage/HeadingPage";
@@ -24,28 +25,28 @@ export default function About() {
       title: "Facebook",
       icon: <FiFacebook />,
       color: "#1877F2",
-      link: "https://facebook.com/your-profile",
+      link: "https://www.facebook.com/profile.php?id=61568711669833&mibextid=rS40aB7S9Ucbxw6v",
     },
     {
       id: 2,
       title: "LinkedIn",
       icon: <FiLinkedin />,
       color: "#0A66C2",
-      link: "https://linkedin.com/in/your-profile",
+      link: "https://www.linkedin.com/in/mohamed-sayed-439a54347/",
     },
     {
       id: 3,
       title: "GitHub",
       icon: <FiGithub />,
       color: "#333",
-      link: "https://github.com/your-username",
+      link: "https://github.com/Mohamedsayed101",
     },
     {
       id: 4,
-      title: "Email",
-      icon: <FiMail />,
-      color: "#D44638",
-      link: "mailto:your-email@example.com",
+      title: "Whatsapp",
+      icon: <FaWhatsapp />,
+      color: "#b7c315ff",
+      link: "https://wa.me/201006291302",
     },
   ];
 
