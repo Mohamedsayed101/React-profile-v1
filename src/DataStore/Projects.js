@@ -18,7 +18,7 @@ import { MdOutlineAnimation } from "react-icons/md";
 export const projectsList = [
   {
     id: 1,
-    image: "/public/Images/E-commerce_React.png",
+    image: "/Images/E-commerce_React.png",
     title: "MO.Shop",
     description:
       " It allows users to browse products, view details, add to cart, and register or login to manage their session.",
@@ -56,7 +56,7 @@ export const projectsList = [
 
   {
     id: 2,
-    image: "/public/Images/Weather_React.png",
+    image: "/Images/Weather_React.png",
     title: "MO Weather",
     description:
       "Weather App is a React project that displays current weather and a multi-day forecast with a modern, user-friendly interface.",
@@ -99,7 +99,7 @@ export const projectsList = [
 
   {
     id: 3,
-    image: "/public/Images/Mo_Fathy_Normal.png",
+    image: "/Images/Mo_Fathy_Normal.png",
     title: "Portfolio",
     description:
       "This is a Portfolio Forent-end project for me friend Mohamed Fathy",
@@ -142,7 +142,7 @@ export const projectsList = [
 
   {
     id: 4,
-    image: "/public/Images/Kasper_normal.png",
+    image: "/Images/Kasper_normal.png",
     title: "Kasper",
     description:
       "This is a Kasper Forent-end project that is show more features for company",
@@ -180,7 +180,7 @@ export const projectsList = [
 
   {
     id: 5,
-    image: "/public/Images/Loen_normal.png",
+    image: "/Images/Loen_normal.png",
     title: "Leon",
     description:
       "This is a Leon Forent-end project that is show more features for company",
@@ -212,7 +212,7 @@ export const projectsList = [
 
   {
     id: 6,
-    image: "/public/Images/E-commerce_normal.png",
+    image: "/Images/E-commerce_normal.png",
     title: "Tut-Shop",
     description:
       "E-commerce App That display products of Tut-shop such clothes,caps,t-shirt,...,etc",
@@ -244,7 +244,7 @@ export const projectsList = [
  
   {
     id: 7,
-    image: "/public/Images/Curds_normal.png",
+    image: "/Images/Curds_normal.png",
     title: "CURDS System",
     description:
       "CURDS system That display products of specificated place such clothes,caps,t-shirt,...,etc",
@@ -276,7 +276,7 @@ export const projectsList = [
 
   {
     id: 8,
-    image: "/public/Images/Todo_React.png",
+    image: "/Images/Todo_React.png",
     title: "Todo App",
     description:
       "Todo List App That Show Tasks and made filtration to them,it 's ready to be a big project because using Redux",
@@ -313,7 +313,7 @@ export const projectsList = [
 
   {
     id: 9,
-    image: "/public/Images/Todo_normal.png",
+    image: "/Images/Todo_normal.png",
     title: "ToDo List App",
     description:
       "It's amazing Todo List that allow type title and description of task and allow to make it completed or padding ,...,etc",
