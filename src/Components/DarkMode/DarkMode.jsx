@@ -1,30 +1,31 @@
-import { IconButton, Tooltip } from "@mui/material";
-import { useColorScheme } from "@mui/material/styles";
+import { useEffect, useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-export default function DarkMode() {
-  const { mode, setMode } = useColorScheme();
+export default function DarkModeToggle() {
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
 
-  if (!mode) {
-    return null;
-  }
-
-  const toggleMode = () => {
-    setMode(mode === "light" ? "dark" : "light");
-  };
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
-    <Tooltip title={`Switch to ${mode === "light" ? "Dark" : "Light"} mode`}>
-      <IconButton
-        onClick={toggleMode}
-        color="inherit"
-        sx={{
-          ml: 1,
-          color:"purple"
-        }}
-      >
-        {mode === "light" ? <FaSun /> : <FaMoon />}
-      </IconButton>
-    </Tooltip>
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className=" rounded-full w-full h-full bg-gray-200 dark:bg-gray-800 transition-colors flex justify-center items-center "
+    >
+      {darkMode ? (
+        <FaSun className="text-yellow-400" />
+      ) : (
+        <FaMoon className="text-purple-400" />
+      )}
+    </button>
   );
 }

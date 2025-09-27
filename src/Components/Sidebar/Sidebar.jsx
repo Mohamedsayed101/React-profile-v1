@@ -6,10 +6,10 @@ import {
   FaCode,
   FaCertificate,
   FaEnvelope,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { useTheme } from "@mui/material/styles";
 
 const links = [
   { id: 1, title: "About", to: "/about", icon: <FaUser /> },
@@ -22,70 +22,67 @@ const links = [
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
-  const theme = useTheme();
+
   return (
     <>
+      {/* Overlay for mobile */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/50 z-[100] sm:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       {/* Toggle Button */}
       <button
-        style={{ backgroundColor: theme.palette.primary.dark }}
-        className="sm:hidden fixed top-4 right-4 z-150 p-2 text-white rounded-md"
+        className="sm:hidden fixed top-4 right-4 z-[150] p-2 text-white rounded-md"
         onClick={() => setOpen(!open)}
       >
         {open ? <FaTimes /> : <FaBars />}
       </button>
 
       {/* Sidebar */}
-      <aside
-        className={`
-          pos
-          fixed top-0 right-0 max-h-screen h-screen 
-          flex flex-col
-          border-l border-gray-700
-          transform transition-transform duration-300
-          ${open ? "translate-x-0" : "translate-x-full"}
-          sm:static sm:translate-x-0 sm:h-auto sm:border-r
-        `}
+     <aside
+  className={`
+    sm:sticky sm:top-0 sm:h-screen
+    flex flex-col
+    justify-center
+    border-l border-gray-700
+    transform transition-transform duration-300
+    ${open ? "translate-x-0" : "translate-x-full"}
+    sm:translate-x-0 sm:border-r
+    bg-white dark:bg-black
+    z-[120]
+  `}
+>
+  <nav className="w-full flex flex-col justify-center items-center gap-4 mt-10 sm:mt-0">
+    {links.map((ele) => (
+      <NavLink
+        key={ele.id}
+        to={ele.to}
+        onClick={() => setOpen(false)}
+        className={({ isActive }) =>
+          `flex flex-col items-center justify-center w-full gap-2 relative px-2 py-1 transition-all
+           ${isActive ? "font-bold text-cyan-400 border-r-2 border-blue-500" : "text-gray-400"}`
+        }
       >
-        <nav className="w-full flex flex-col justify-center items-center h-full gap-4 mt-10 sm:mt-0">
-          {links.map((ele) => (
-            <NavLink
-              key={ele.id}
-              to={ele.to}
-              onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `flex flex-col items-center justify-center w-full gap-2 relative px-2 py-1 transition-all ${
-                  isActive ? "font-bold" : ""
-                }`
-              }
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      color: theme.palette.secondary.light,
-                      borderRight: `3px solid ${theme.palette.primary.main}`,
-                    }
-                  : {}
-              }
+        {({ isActive }) => (
+          <>
+            <span
+              className={`text-xl p-2 rounded-xl ${
+                isActive ? "bg-blue-500 text-white" : "text-gray-400"
+              }`}
             >
-              {({ isActive }) => (
-                <>
-                  <span
-                    className="text-xl p-2 rounded-xl"
-                    style={{
-                      backgroundColor: isActive
-                        ? theme.palette.primary.main
-                        : "transparent",
-                      color: isActive ? "#fff" : "#ccc",
-                    }}
-                  >
-                    {ele.icon}
-                  </span>
-                  <span>{ele.title}</span>
-                </>
-              )}
-            </NavLink>
-          ))}
-        </nav>
-      </aside>
+              {ele.icon}
+            </span>
+            <span>{ele.title}</span>
+          </>
+        )}
+      </NavLink>
+    ))}
+  </nav>
+</aside>
+
     </>
   );
 }

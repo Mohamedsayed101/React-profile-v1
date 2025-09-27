@@ -8,19 +8,16 @@ export default function MainLayout() {
     <Box
       sx={{
         display: "flex",
-        bgcolor: "background.default",
-        color: "text.primary",
         minHeight: "100vh",
       }}
     >
       <Sidebar />
       <Box
         component="main"
-        className="flex-grow p-6 relative"
-        sx={{ bgcolor: "background.default", color: "text.primary" }}
+        className="flex-grow p-6 relative dark:bg-black"
       >
         <Outlet />
-        <div className="absolute right-10 bottom-10 border-blue-400 border-1 border-solid flex justify-end items-center  rounded-full w-11 h-11">
+        <div className="absolute right-10 bottom-10 border-blue-400 border-1 border-solid  rounded-full w-11 h-11">
           <DarkMode />
         </div>
       </Box>

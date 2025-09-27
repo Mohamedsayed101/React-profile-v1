@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <Routes>
+    <Routes >
       {/* Parent Layout */}
       <Route element={<MainLayout />}>
         <Route index element={<Navigate to="/about" replace />} />
