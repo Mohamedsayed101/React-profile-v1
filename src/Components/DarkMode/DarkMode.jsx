@@ -19,7 +19,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className=" rounded-full w-full h-full bg-gray-200 dark:bg-gray-800 transition-colors flex justify-center items-center "
+      className=" rounded-full w-full h-full bg-gray-200 dark:bg-gray-800 transition-colors flex justify-center items-center cursor-pointer"
     >
       {darkMode ? (
         <FaSun className="text-yellow-400" />
