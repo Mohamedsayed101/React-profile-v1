@@ -62,7 +62,7 @@ export default function About() {
   ];
 
   return (
-    <div className="px-3 flex flex-col gap-12 ">
+    <div className="px-3 flex flex-col gap-19 ">
       <HeadingPage title="About Me" />
 
       {/* Content Section */}
@@ -78,7 +78,7 @@ export default function About() {
 
         {/* Info Section */}
         <div className="flex flex-col gap-6 lg:flex-1" data-aos="fade-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-center lg:text-left text-purple-600 dark:text-purple-400">
+          <h2 className="text-xl sm:text-3xl font-semibold text-center lg:text-left text-purple-600 dark:text-purple-400">
             Mohamed Sayed |{" "}
             <span>
               <Typewriter
@@ -98,7 +98,7 @@ export default function About() {
           </h2>
 
           {/* Bio */}
-          <div className="flex flex-col gap-4 text-center lg:text-left text-gray-700 dark:text-gray-300">
+          <div className="flex flex-col gap-4 text-center lg:text-left lg:w-49/50 text-gray-700 dark:text-gray-300 ">
             <p>
               I’m a Computer and AI student with hands-on experience in frontend
               development using <strong>React</strong> and modern web
