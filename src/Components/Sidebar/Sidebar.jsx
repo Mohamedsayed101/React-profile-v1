@@ -52,12 +52,13 @@ export default function Sidebar() {
           fixed top-0 right-0 h-full w-28 
           transform transition-transform duration-300 ease-in-out
           ${open ? "translate-x-0" : "translate-x-full"}
-          sm:translate-x-0 sm:static sm:h-screen sm:w-24
+          sm:translate-x-0 sm:w-24
           flex flex-col justify-center
           border-l
           sm:border-r border-gray-700
           bg-white dark:bg-black
           z-[120]
+          sm:sticky sm:top-0 sm:h-screen
         `}
       >
         <nav className="flex flex-col justify-center items-center gap-4 mt-10 sm:mt-0">

@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="px-3 flex flex-col gap-12">
+    <div className="px-3 flex flex-col gap-19">
       <HeadingPage title="Contact Me" />
 
       <div data-aos="fade-left" className="w-full">
