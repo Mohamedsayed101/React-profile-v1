@@ -36,11 +36,30 @@ export default function Contact() {
       .finally(() => setLoading(false));
   };
 
+  const textFieldStyles = {
+    input: { color: "black" }, 
+    label: { color: "#555" },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": { borderColor: "#ccc" },
+      "&:hover fieldset": { borderColor: "black" },
+      "&.Mui-focused fieldset": { borderColor: "black" },
+    },
+    ".dark &": {
+      input: { color: "white" },
+      label: { color: "#d1d5db" },
+      "& .MuiOutlinedInput-root": {
+        "& fieldset": { borderColor: "#666" },
+        "&:hover fieldset": { borderColor: "white" },
+        "&.Mui-focused fieldset": { borderColor: "white" },
+      },
+    },
+  };
+
   return (
     <div className="px-3 flex flex-col gap-12">
       <HeadingPage title="Contact Me" />
 
-      <div data-aos="fade-left" className="w-full dark:text-white">
+      <div data-aos="fade-left" className="w-full">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-4 sm:w-2/3 lg:w-1/3 mx-auto"
@@ -53,9 +72,7 @@ export default function Contact() {
             placeholder="Enter Your Name"
             error={!!errors.name}
             helperText={errors.name?.message}
-            className="dark:[&_.MuiOutlinedInput-root]:text-white 
-                       dark:[&_.MuiInputLabel-root]:text-gray-300 
-                       dark:[&_.MuiOutlinedInput-notchedOutline]:border-gray-600"
+            sx={textFieldStyles}
           />
 
           {/* Email */}
@@ -73,9 +90,7 @@ export default function Contact() {
             placeholder="Enter Your Email"
             error={!!errors.email}
             helperText={errors.email?.message}
-            className="dark:[&_.MuiOutlinedInput-root]:text-white 
-                       dark:[&_.MuiInputLabel-root]:text-gray-300 
-                       dark:[&_.MuiOutlinedInput-notchedOutline]:border-gray-600"
+            sx={textFieldStyles}
           />
 
           {/* Subject */}
@@ -86,9 +101,7 @@ export default function Contact() {
             placeholder="Subject"
             error={!!errors.subject}
             helperText={errors.subject?.message}
-            className="dark:[&_.MuiOutlinedInput-root]:text-white 
-                       dark:[&_.MuiInputLabel-root]:text-gray-300 
-                       dark:[&_.MuiOutlinedInput-notchedOutline]:border-gray-600"
+            sx={textFieldStyles}
           />
 
           {/* Message */}
@@ -101,9 +114,7 @@ export default function Contact() {
             placeholder="Message"
             error={!!errors.message}
             helperText={errors.message?.message}
-            className="dark:[&_.MuiOutlinedInput-root]:text-white 
-                       dark:[&_.MuiInputLabel-root]:text-gray-300 
-                       dark:[&_.MuiOutlinedInput-notchedOutline]:border-gray-600"
+            sx={textFieldStyles}
           />
 
           {/* Submit */}
