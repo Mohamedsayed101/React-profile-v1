@@ -10,6 +10,8 @@ import {
   FaBootstrap,
 } from "react-icons/fa";
 
+import { SiPython } from "react-icons/si";
+
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { PiTreeStructureLight } from "react-icons/pi";
 import { VscSymbolStructure } from "react-icons/vsc";
@@ -33,6 +35,7 @@ export const skills = {
       { icon: SiCplusplus, name: "C++" },
       { icon: FaJs, name: "JavaScript" },
       { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiPython, name: "Python" }
     ],
   },
 

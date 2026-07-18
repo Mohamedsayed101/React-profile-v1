@@ -133,7 +133,7 @@ export default function About() {
             <Button
               variant="contained"
               download
-              href="/Mohamed_Sayed_Frontend.pdf"
+              href="/Documents/CV.docx"
               target="_blank"
               className="!bg-purple-600 hover:!bg-purple-700 dark:!bg-purple-500 dark:hover:!bg-purple-600 text-white flex items-center justify-center gap-2"
             >
